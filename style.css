@@ -1539,4 +1539,51 @@ h3 {
 .artista-foto-botao:hover::after,
 .artista-foto-botao:focus-visible::after {
   opacity: 1;
+} 
+/* ===== AJUSTE MOBILE DA GALERIA ===== */
+
+@media (max-width: 620px) {
+  .galeria-estilo {
+    padding-top: 34px;
+    padding-bottom: 24px;
+  }
+
+  .galeria-estilo:first-of-type {
+    padding-top: 46px;
+  }
+
+  .galeria-estilo-cabecalho {
+    margin-bottom: 24px;
+  }
+
+  .galeria-estilo-cabecalho .etiqueta {
+    margin-bottom: 9px;
+    font-size: 0.7rem;
+  }
+
+  .galeria-estilo-cabecalho h2 {
+    margin-bottom: 12px;
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .galeria-estilo-cabecalho > p {
+    max-width: 330px;
+    font-size: 0.98rem;
+    line-height: 1.35;
+  }
+
+  .galeria-preview {
+    gap: 8px;
+    padding: 3px 3px 6px;
+  }
+
+  .galeria-preview-item {
+    flex-basis: calc(100% - 22px);
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+  }
+
+  .galeria-cta {
+    margin-top: 16px;
+  }
 }
