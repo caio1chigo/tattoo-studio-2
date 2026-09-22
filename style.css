@@ -967,7 +967,52 @@ h3 {
   font-size: 0.95rem;
   line-height: 1.55;
 }
+.item-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 
+  cursor: pointer;
+  list-style: none;
+}
+
+.item-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.item-faq summary > span:first-child {
+  flex: 1;
+  transform: none;
+  rotate: none;
+}
+
+.faq-simbolo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 24px;
+  height: 24px;
+
+  font-size: 1.4rem;
+  line-height: 1;
+  transform: rotate(0deg);
+
+  transition: transform 0.25s ease;
+  transform-origin: center;
+}
+
+.item-faq[open] .faq-simbolo {
+  transform: rotate(45deg);
+}
+
+.item-faq summary:focus-visible {
+  outline: 2px solid var(--cor-destaque, #fff);
+  outline-offset: 6px;
+}
 /* ===== AVALIAÇÕES ===== */
 .grade-depoimentos {
   display: grid;
@@ -1829,4 +1874,34 @@ h3 {
   .galeria-cta {
     margin-top: 12px !important;
   }
+}
+.seletor-idioma {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.botao-idioma {
+  border: 0;
+  padding: 4px 0;
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.botao-idioma.ativo,
+.botao-idioma:hover,
+.botao-idioma:focus-visible {
+  color: #fff;
+}
+
+.botao-idioma:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
 }
