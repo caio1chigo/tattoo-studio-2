@@ -1,790 +1,647 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Studio Tattoo | Estúdio de Tatuagem</title>
   <meta
     name="description"
-    content="Estúdio de tatuagem focado em estilo, técnica e bem-estar. Conheça nossos artistas, agende sua sessão e venha nos visitar.">
+    content="Estúdio de tatuagem focado em estilo, técnica e bem-estar. Conheça nossos artistas, agende sua sessão e venha nos visitar."
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+    rel="stylesheet"
+  >
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Loader simples -->
   <div id="loader" aria-hidden="true">
     <span class="loader-marca">STUDIO TATTOO</span>
     <span class="loader-linha"></span>
   </div>
-  <!-- Cabeçalho fixo -->
+
   <header class="cabecalho">
     <nav class="nav-secundaria" aria-label="Navegação secundária">
-      <a href="#estudio">Informações</a>
-      <a href="#localizacao">Contato</a>
+      <a href="#informacoes" data-i18n="nav.info">Informações</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
     </nav>
+
     <a href="#topo" class="logo" aria-label="Ir para o início">
       Studio<br>
-      <span>Tattoo</span></a>
+      <span>Tattoo</span>
+    </a>
+
     <nav class="nav-principal" aria-label="Navegação principal">
-      <a href="#tatuadores">Artistas</a>
-      <a href="#avaliacoes">Avaliações</a>
-      <a href="#faq">FAQ</a>
-      <a href="#formulario-contato" class="botao-nav">Agendar sessão →</a>
+      <a href="#tatuadores" data-i18n="nav.artists">Artistas</a>
+      <a href="#avaliacoes" data-i18n="nav.reviews">Avaliações</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#formulario-contato" class="botao-nav" data-i18n="nav.book">Agendar sessão →</a>
+
+      <div class="seletor-idioma" aria-label="Selecionar idioma">
+        <button type="button" class="botao-idioma ativo" data-lang="pt" aria-pressed="true">PT</button>
+        <span aria-hidden="true">|</span>
+        <button type="button" class="botao-idioma" data-lang="en" aria-pressed="false">EN</button>
+      </div>
     </nav>
+
     <button
       class="menu-hamburguer"
       type="button"
       id="menu-btn"
       aria-label="Abrir menu"
-      aria-expanded="false">
+      aria-expanded="false"
+      aria-controls="menu-mobile"
+    >
       <span></span>
       <span></span>
       <span></span>
     </button>
   </header>
-  <!-- Menu mobile -->
-  <nav class="menu-mobile" id="menu-mobile" aria-label="Navegação mobile">
-    <a href="#estudio">Informações</a>
-    <a href="#tatuadores">Artistas</a>
-    <a href="#avaliacoes">Avaliações</a>
-    <a href="#faq">FAQ</a>
-    <a href="#localizacao">Localização</a>
-    <a href="#formulario-contato">Contato</a>
+
+  <nav class="menu-mobile" id="menu-mobile" aria-label="Navegação mobile" hidden>
+    <a href="#informacoes" data-i18n="nav.info">Informações</a>
+    <a href="#tatuadores" data-i18n="nav.artists">Artistas</a>
+    <a href="#avaliacoes" data-i18n="nav.reviews">Avaliações</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="#localizacao" data-i18n="nav.location">Localização</a>
+    <a href="#formulario-contato" data-i18n="nav.contact">Contato</a>
+
+    <div class="seletor-idioma" aria-label="Selecionar idioma">
+      <button type="button" class="botao-idioma ativo" data-lang="pt" aria-pressed="true">PT</button>
+      <span aria-hidden="true">|</span>
+      <button type="button" class="botao-idioma" data-lang="en" aria-pressed="false">EN</button>
+    </div>
   </nav>
+
   <main id="topo">
-<a
-  class="botao-whatsapp-flutuante"
-  href="https://wa.me/556182118809?text=Ol%C3%A1%2C%20Caio%21%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20falar%20sobre%20um%20projeto."
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Falar com Caio pelo WhatsApp">
-  <span aria-hidden="true">☏</span>
-  <span>WhatsApp</span></a>
-    <!-- Hero -->
+    <a
+      class="botao-whatsapp-flutuante"
+      href="https://wa.me/556182118809?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20uma%20sess%C3%A3o%20de%20tatuagem."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar com o estúdio pelo WhatsApp"
+    >
+      <span aria-hidden="true">☏</span>
+      <span data-i18n="contact.whatsapp">WhatsApp</span>
+    </a>
+
     <section class="hero" id="hero">
-      <img
-        src="src/rita2.jpg"
-        alt=""
-        class="hero-fundo">
+      <img src="src/fachada-studio.jpg" alt="" class="hero-fundo">
       <div class="hero-sobreposicao" aria-hidden="true"></div>
+
       <div class="hero-conteudo">
-        <p class="hero-etiqueta">Estúdio autoral · Brasília-DF</p>
+        <p class="hero-etiqueta" data-i18n="hero.location">Estúdio autoral · Brasília-DF</p>
         <h1>Tattoo<br>Studio</h1>
-        <p class="hero-descricao">
-          Um espaço dedicado à tatuagem autoral, com técnica apurada,
-          ambiente acolhedor e atenção total ao seu cuidado do início
-          ao fim do processo.</p>
+
+        <p class="hero-descricao" data-i18n="hero.description">
+          Um espaço dedicado à tatuagem autoral, com técnica apurada, ambiente acolhedor e atenção total ao seu cuidado do início ao fim do processo.
+        </p>
+
         <div class="hero-botoes">
-          <a href="#formulario-contato" class="botao botao-primario">
-            Agendar avaliação →</a>
-          <a href="#localizacao" class="botao botao-secundario">
-            Localização
-          </a>
+          <a href="#formulario-contato" class="botao botao-primario" data-i18n="hero.consultation">Agendar avaliação →</a>
+          <a href="#localizacao" class="botao botao-secundario" data-i18n="hero.locationButton">Localização</a>
         </div>
       </div>
     </section>
-    <!-- Barra de informações rápidas -->
+
     <div class="barra-info">
-      <span>Ter a Sáb</span>
+      <span data-i18n="hero.hours">Terça a sábado</span>
       <span aria-hidden="true">✦</span>
       <span>10h → 19h</span>
       <span aria-hidden="true">✦</span>
-      <span>Asa Norte · Brasília</span>
+      <span data-i18n="hero.city">Manhattan · New York</span>
       <span aria-hidden="true">✦</span>
-      <span>Orçamento sem compromisso</span>
+      <span data-i18n="hero.quote">Orçamento sem compromisso</span>
       <span aria-hidden="true">✦</span>
-      <a href="#formulario-contato">Agendar sessão</a>
+      <a href="#formulario-contato" data-i18n="nav.book">Agendar sessão</a>
     </div>
-    <!-- Início / Apresentação -->
-    <section class="secao inicio" id="inicio">
+
+    <section class="secao inicio" id="informacoes">
       <div class="inicio-texto">
-        <p class="etiqueta">Sobre o estúdio</p>
-        <h2>Novo estúdio de tatuagem focado em estilo e bem-estar.</h2>
-        <p>Reunimos artistas de estilos diferentes em um único espaço
-          pensado para transformar a experiência de se tatuar: ambiente
-          limpo, material esterilizado individualmente e um atendimento
-          que começa muito antes da agulha tocar a pele.</p>
-        <p>Cada sessão é conduzida com calma, respeitando o tempo do
-          cliente e o cuidado necessário para transformar uma ideia em
-          uma tatuagem que realmente faça sentido para você.</p>
-        <a href="#tatuadores" class="link-secao">
-          Conheça os artistas <span aria-hidden="true">→</span>
-        </a>
+        <p class="etiqueta" data-i18n="about.label">Sobre o estúdio</p>
+        <h2 data-i18n="about.title">Novo estúdio de tatuagem focado em estilo e bem-estar.</h2>
+
+        <p data-i18n="about.textOne">
+          Reunimos artistas de estilos diferentes em um único espaço pensado para transformar a experiência de se tatuar: ambiente limpo, material esterilizado individualmente e um atendimento que começa muito antes da agulha tocar a pele.
+        </p>
+
+        <p data-i18n="about.textTwo">
+          Cada sessão é conduzida com calma, respeitando o tempo do cliente e o cuidado necessário para transformar uma ideia em uma tatuagem que realmente faça sentido para você.
+        </p>
+
+        <a href="#tatuadores" data-i18n="about.button">Conheça os artistas</a>
       </div>
+
       <div class="carrossel-simples" data-carrossel="sobre-estudio">
-  <button
-    class="carrossel-simples-seta carrossel-simples-anterior"
-    type="button"
-    aria-label="Ver foto anterior do estúdio">
-    <span aria-hidden="true">←</span>
-  </button>
-  <div class="carrossel-simples-trilho">
-    <button
-      class="carrossel-simples-item"
-      type="button"
-      aria-label="Ampliar foto da entrada do estúdio">
-      <img
-        src="src/fachada-studio.jpg"
-        alt="Entrada do estúdio de tatuagem">
-    </button>
-    <button
-      class="carrossel-simples-item"
-      type="button"
-      aria-label="Ampliar foto do ambiente interno do estúdio">
-      <img
-        src="src/studio-espaco.jpg"
-        alt="Ambiente interno do estúdio de tatuagem"
-        loading="lazy">
-    </button>
-    <button
-      class="carrossel-simples-item"
-      type="button"
-      aria-label="Ampliar foto de artista trabalhando no estúdio">
-      <img
-        src="src/tatuador-studio.jpg"
-        alt="Artista tatuando um cliente no estúdio"
-        loading="lazy">
-    </button>
-  </div>
-  <button
-    class="carrossel-simples-seta carrossel-simples-proxima"
-    type="button"
-    aria-label="Ver próxima foto do estúdio">
-    <span aria-hidden="true">→</span>
-  </button>
-</div>
-    </section>
-    <!-- Conheça o estúdio -->
-<section class="secao estudio" id="estudio">
-  <div class="estudio-imagem">
-    <div class="carrossel-simples" data-carrossel="o-espaco">
-      <button
-        class="carrossel-simples-seta carrossel-simples-anterior"
-        type="button"
-        aria-label="Ver foto anterior do espaço">
-        <span aria-hidden="true">←</span>
-      </button>
-      <div class="carrossel-simples-trilho">
-        <button
-          class="carrossel-simples-item"
-          type="button"
-          aria-label="Ampliar foto da recepção do estúdio">
-          <img
-            src="src/studio-espaco2.jpg"
-            alt="Recepção do estúdio de tatuagem">
+        <button class="carrossel-simples-seta carrossel-simples-anterior" type="button" aria-label="Ver foto anterior do estúdio">
+          <span aria-hidden="true">←</span>
         </button>
-        <button
-          class="carrossel-simples-item"
-          type="button"
-          aria-label="Ampliar foto da área de espera do estúdio">
-          <img
-            src="src/ambiente-studio.jpg"
-            alt="Área de espera do estúdio de tatuagem"
-            loading="lazy">
-        </button>
-        <button
-          class="carrossel-simples-item"
-          type="button"
-          aria-label="Ampliar foto da estação de tatuagem">
-          <img
-            src="src/studio-espaco.jpg"
-            alt="Estação de tatuagem organizada no estúdio"
-            loading="lazy">
-        </button>
-        <button
-          class="carrossel-simples-item"
-          type="button"
-          aria-label="Ampliar foto de detalhe da decoração do estúdio">
-          <img
-            src="src/studio-espaco3.jpg"
-            alt="Detalhe da decoração do estúdio de tatuagem"
-            loading="lazy">
+
+        <div class="carrossel-simples-trilho">
+          <button class="carrossel-simples-item" type="button" aria-label="Ampliar foto da entrada do estúdio">
+            <img src="src/fachada-studio.jpg" alt="Entrada do estúdio de tatuagem">
+          </button>
+          <button class="carrossel-simples-item" type="button" aria-label="Ampliar foto do ambiente interno do estúdio">
+            <img src="src/studio-espaco.jpg" alt="Ambiente interno do estúdio de tatuagem" loading="lazy">
+          </button>
+          <button class="carrossel-simples-item" type="button" aria-label="Ampliar foto de artista trabalhando no estúdio">
+            <img src="src/tatuador-studio.jpg" alt="Artista tatuando um cliente no estúdio" loading="lazy">
+          </button>
+        </div>
+
+        <button class="carrossel-simples-seta carrossel-simples-proxima" type="button" aria-label="Ver próxima foto do estúdio">
+          <span aria-hidden="true">→</span>
         </button>
       </div>
-      <button
-        class="carrossel-simples-seta carrossel-simples-proxima"
-        type="button"
-        aria-label="Ver próxima foto do espaço">
-        <span aria-hidden="true">→</span>
-      </button>
-    </div>
-  </div>
-  <div class="estudio-texto">
-    <p class="etiqueta">O espaço</p>
-    <h2>Conheça o nosso estúdio.</h2>
-    <p>Um ambiente pensado para que sua experiência seja confortável,
-      segura e totalmente sua desde o primeiro contato.</p>
-    <p>Trabalhamos com atendimento personalizado, materiais descartáveis
-      e uma estrutura preparada para transformar ideias em tatuagens.</p>
-    <a class="link-secao" href="#formulario-contato">
-      Agendar uma sessão <span aria-hidden="true">→</span></a>
-  </div>
-</section>
-    <!-- Artistas -->
+    </section>
+
+    <section class="secao estudio" id="estudio">
+      <div class="estudio-imagem">
+        <div class="carrossel-simples" data-carrossel="o-espaco">
+          <button class="carrossel-simples-seta carrossel-simples-anterior" type="button" aria-label="Ver foto anterior do espaço">
+            <span aria-hidden="true">←</span>
+          </button>
+
+          <div class="carrossel-simples-trilho">
+            <button class="carrossel-simples-item" type="button" aria-label="Ampliar foto da recepção do estúdio">
+              <img src="src/studio-espaco2.jpg" alt="Recepção do estúdio de tatuagem">
+            </button>
+            <button class="carrossel-simples-item" type="button" aria-label="Ampliar foto da área de espera do estúdio">
+              <img src="src/ambiente-studio.jpg" alt="Área de espera do estúdio de tatuagem" loading="lazy">
+            </button>
+            <button class="carrossel-simples-item" type="button" aria-label="Ampliar foto da estação de tatuagem">
+              <img src="src/studio-espaco.jpg" alt="Estação de tatuagem organizada no estúdio" loading="lazy">
+            </button>
+            <button class="carrossel-simples-item" type="button" aria-label="Ampliar foto de detalhe da decoração do estúdio">
+              <img src="src/studio-espaco3.jpg" alt="Detalhe da decoração do estúdio de tatuagem" loading="lazy">
+            </button>
+          </div>
+
+          <button class="carrossel-simples-seta carrossel-simples-proxima" type="button" aria-label="Ver próxima foto do espaço">
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="estudio-texto">
+        <p class="etiqueta" data-i18n="space.label">O espaço</p>
+        <h2 data-i18n="space.title">Conheça o nosso estúdio.</h2>
+        <p data-i18n="space.textOne">Um ambiente pensado para que sua experiência seja confortável, segura e totalmente sua desde o primeiro contato.</p>
+        <p data-i18n="space.textTwo">Trabalhamos com atendimento personalizado, materiais descartáveis e uma estrutura preparada para transformar ideias em tatuagens.</p>
+        <a class="link-secao" href="#formulario-contato" data-i18n="space.button">Agendar uma sessão <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
     <section class="secao tatuadores" id="tatuadores">
       <div class="secao-cabecalho">
-        <p class="etiqueta">Nossa equipe</p>
-        <h2>Nossos artistas.</h2>
-        <p>Estilos diferentes, o mesmo compromisso com técnica e
-          cuidado. Conheça quem vai transformar sua ideia em tatuagem.</p>
+        <p class="etiqueta" data-i18n="team.label">Nossa equipe</p>
+        <h2 data-i18n="team.title">Nossos artistas.</h2>
+        <p data-i18n="team.text">Estilos diferentes, o mesmo compromisso com técnica e cuidado. Conheça quem vai transformar sua ideia em tatuagem.</p>
       </div>
+
       <div class="grade-artistas">
         <article class="artista-card">
-         <button
-  class="artista-foto-botao"
-  type="button"
-  aria-label="Ampliar foto de Nome do artista">
-  <img
-    src="src/j-silverhand.jpg"
-    alt="Rico Duarte">
-</button>
-       <h3>Rico Duarte</h3>
+          <button class="artista-foto-botao" type="button" aria-label="Ampliar foto de Rico Duarte">
+            <img src="src/rico.jpg" alt="Rico Duarte">
+          </button>
+          <h3>Rico Duarte</h3>
           <p>Blackwork &amp; Old School:</p>
-          <p>Combina o traço grosso e os temas clássicos do estilo tradicional com o uso exclusivo de tinta preta e sombras sólidas.</p>
+          <p data-i18n="artists.blackwork">Combina o traço grosso e os temas clássicos do estilo tradicional com o uso exclusivo de tinta preta e sombras sólidas.</p>
         </article>
+
         <article class="artista-card">
-       <button
-  class="artista-foto-botao"
-  type="button"
-  aria-label="Ampliar foto de Nome do artista">
-  <img
-    src="src/rita2.jpg"
-    alt="Bia Nogueira">
-</button>
-        <h3>Bia Nogueira</h3>
+          <button class="artista-foto-botao" type="button" aria-label="Ampliar foto de Bia Nogueira">
+            <img src="src/bia.jpg" alt="Bia Nogueira">
+          </button>
+          <h3>Bia Nogueira</h3>
           <p>Fine Line &amp; Botânico:</p>
-          <p>Combina traços finos e delicados com elementos da natureza, como flores, folhas e ramo.</p>
+          <p data-i18n="artists.fineLine">Combina traços finos e delicados com elementos da natureza, como flores, folhas e ramos.</p>
         </article>
-     <article class="artista-card">
-<button
-  class="artista-foto-botao"
-  type="button"
-  aria-label="Ampliar foto de Nome do artista">
-  <img
-    src="src/v.jpg"
-    alt="Theo Alencar">
-</button>
-        <h3>Theo Alencar</h3>
+
+        <article class="artista-card">
+          <button class="artista-foto-botao" type="button" aria-label="Ampliar foto de Theo Alencar">
+            <img src="src/theo.jpg" alt="Theo Alencar">
+          </button>
+          <h3>Theo Alencar</h3>
           <p>Realismo &amp; Retrato:</p>
-          <p>Técnica artística avançada que busca reproduzir fotografias na pele com o máximo de fidelidade, profundidade e precisão.</p>
+          <p data-i18n="artists.realism">Técnica artística avançada que busca reproduzir fotografias na pele com o máximo de fidelidade, profundidade e precisão.</p>
         </article>
-    <article class="artista-card">
-<button
-  class="artista-foto-botao"
-  type="button"
-  aria-label="Ampliar foto de Nome do artista">
-  <img
-    src="src/lw.jpg"
-    alt="Nina Farias">
-</button>
-        <h3>Nina Farias</h3>
+
+        <article class="artista-card">
+          <button class="artista-foto-botao" type="button" aria-label="Ampliar foto de Nina Farias">
+            <img src="src/nina.jpg" alt="Nina Farias">
+          </button>
+          <h3>Nina Farias</h3>
           <p>Autoral &amp; Ilustrativo:</p>
-          <p>Desenho exclusivo criado do zero pelo artista especificamente para você, com forte apelo artístico e visual de ilustração.</p>
+          <p data-i18n="artists.illustrative">Desenho exclusivo criado do zero pelo artista especificamente para você, com forte apelo artístico e visual de ilustração.</p>
         </article>
       </div>
     </section>
-    <!-- Galeria(Blackwork & Old School) -->
+
+<!-- Galeria: Blackwork & Old School -->
 <section
   class="secao galeria-estilo galeria-estilo-escuro"
   id="galeria"
-  data-galeria="blackwork-oldschool">
+  data-galeria="blackwork-oldschool"
+>
   <div class="galeria-estilo-cabecalho">
     <h1 class="titulo-principal-galeria">Galeria.</h1>
-    <p class="etiqueta">Portfólio</p>
-    <h2>Blackwork &amp; Old School.</h2>
-    <p>Contrastes marcantes, preto sólido, símbolos clássicos e composições
-      com personalidade.</p>
+    <p class="etiqueta" data-i18n="gallery.label">Portfólio</p>
+    <h2 data-i18n="gallery.blackwork.title">Blackwork &amp; Old School.</h2>
+    <p data-i18n="gallery.blackwork.description">
+      Contrastes marcantes, preto sólido, símbolos clássicos e composições com personalidade.
+    </p>
   </div>
+
   <div class="galeria-preview-wrapper">
     <button
       class="galeria-seta-preview galeria-seta-preview-esquerda"
       type="button"
-      aria-label="Ver fotos anteriores de Blackwork e Old School">
+      aria-label="Ver fotos anteriores de Blackwork e Old School"
+      data-i18n-aria-label="gallery.blackwork.previous"
+    >
       <span aria-hidden="true">←</span>
     </button>
+
     <div class="galeria-preview">
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem blackwork ornamental no antebraço">
-        <img
-          src="src/j-silverhand.jpg"
-          alt="Tatuagem blackwork ornamental no antebraço">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem blackwork no antebraço" data-i18n-aria-label="gallery.blackwork.image1">
+        <img src="src/bw1.jpg" alt="Tatuagem blackwork no antebraço" data-i18n-alt="gallery.blackwork.image1">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem blackwork ornamental no peito">
-        <img
-          src="src/kirishi.jpg"
-          alt="Tatuagem blackwork ornamental no peito">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem blackwork no peito" data-i18n-aria-label="gallery.blackwork.image2">
+        <img src="src/bw2.jpg" alt="Tatuagem blackwork no peito" data-i18n-alt="gallery.blackwork.image2">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem blackwork ornamental na perna">
-        <img
-          src="src/lw.jpg"
-          alt="Tatuagem blackwork ornamental na perna">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem blackwork na perna" data-i18n-aria-label="gallery.blackwork.image3">
+        <img src="src/bw3.jpg" alt="Tatuagem blackwork na perna" data-i18n-alt="gallery.blackwork.image3">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem blackwork ornamental no pé">
-        <img
-          src="src/v2.jpg"
-          alt="Tatuagem blackwork ornamental no pé">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem blackwork no pé" data-i18n-aria-label="gallery.blackwork.image4">
+        <img src="src/bw4.jpg" alt="Tatuagem blackwork no pé" data-i18n-alt="gallery.blackwork.image4">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem blackwork ornamental na panturrilha">
-        <img
-          src="src/v.jpg"
-          alt="Tatuagem blackwork ornamental na panturrilha">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem blackwork na panturrilha" data-i18n-aria-label="gallery.blackwork.image5">
+        <img src="src/bw5.jpg" alt="Tatuagem blackwork na panturrilha" data-i18n-alt="gallery.blackwork.image5">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem old school de rosa colorida">
-        <img
-          src="src/rita2.jpg"
-          alt="Tatuagem old school de rosa colorida no braço"
-          loading="lazy">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem old school no braço" data-i18n-aria-label="gallery.blackwork.image6">
+        <img src="src/bw6.jpg" alt="Tatuagem old school no braço" data-i18n-alt="gallery.blackwork.image6" loading="lazy">
       </button>
     </div>
+
     <button
       class="galeria-seta-preview galeria-seta-preview-direita"
       type="button"
-      aria-label="Ver mais fotos de Blackwork e Old School">
+      aria-label="Ver mais fotos de Blackwork e Old School"
+      data-i18n-aria-label="gallery.blackwork.next"
+    >
       <span aria-hidden="true">→</span>
     </button>
   </div>
+
   <div class="galeria-cta">
-    <button
-      class="botao botao-secundario botao-mostrar-galeria"
-      type="button"
-      aria-expanded="false">
-      <span class="texto-botao">Mostrar mais</span>
+    <button class="botao botao-secundario botao-mostrar-galeria" type="button" aria-expanded="false">
+      <span class="texto-botao" data-i18n="gallery.showMore">Mostrar mais</span>
       <span aria-hidden="true">↓</span>
     </button>
   </div>
+
   <div class="galeria-expandida-wrapper" hidden></div>
 </section>
+
+<!-- Galeria: Fine Line & Botânico -->
 <section
   class="secao galeria-estilo"
   id="galeria-fine-line-e-botanico"
-  data-galeria="fineline-botanico">
+  data-galeria="fineline-botanico"
+>
   <div class="galeria-estilo-cabecalho">
-    <p class="etiqueta">Portfólio</p>
-    <h2>Fine Line &amp; Botânico.</h2>
-    <p>União de delicadeza técnica e temática natural.</p>
+    <p class="etiqueta" data-i18n="gallery.label">Portfólio</p>
+    <h2 data-i18n="gallery.fineline.title">Fine Line &amp; Botânico.</h2>
+    <p data-i18n="gallery.fineline.description">União de delicadeza técnica e temática natural.</p>
   </div>
+
   <div class="galeria-preview-wrapper">
-    <button
-      class="galeria-seta-preview galeria-seta-preview-esquerda"
-      type="button"
-      aria-label="Ver fotos anteriores de Fine Line e Botanico">
+    <button class="galeria-seta-preview galeria-seta-preview-esquerda" type="button" aria-label="Ver fotos anteriores de Fine Line e Botânico" data-i18n-aria-label="gallery.fineline.previous">
       <span aria-hidden="true">←</span>
     </button>
+
     <div class="galeria-preview">
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem fineline ornamental no antebraço">
-        <img
-          src="src/v2.jpg"
-          alt="Tatuagem fineline ornamental no antebraço">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem fine line no antebraço" data-i18n-aria-label="gallery.fineline.image1">
+        <img src="src/bt.jpg" alt="Tatuagem fine line no antebraço" data-i18n-alt="gallery.fineline.image1">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem fineline ornamental no bíceps">
-        <img
-          src="src/rita2.jpg"
-          alt="Tatuagem fineline ornamental no bíceps">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem fine line no bíceps" data-i18n-aria-label="gallery.fineline.image2">
+        <img src="src/bt2.jpg" alt="Tatuagem fine line no bíceps" data-i18n-alt="gallery.fineline.image2">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem fineline ornamental no tríceps">
-        <img
-          src="src/v.jpg"
-          alt="Tatuagem fineline ornamental no tríceps">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem fine line no tríceps" data-i18n-aria-label="gallery.fineline.image3">
+        <img src="src/bt3.jpg" alt="Tatuagem fine line no tríceps" data-i18n-alt="gallery.fineline.image3">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem fineline ornamental no pescoço">
-        <img
-          src="src/kirishi.jpg"
-          alt="Tatuagem fineline ornamental no pescoço">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem fine line no pescoço" data-i18n-aria-label="gallery.fineline.image4">
+        <img src="src/bt4.jpg" alt="Tatuagem fine line no pescoço" data-i18n-alt="gallery.fineline.image4">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem fineline ornamental na mão">
-        <img
-          src="src/lw.jpg"
-          alt="Tatuagem fineline ornamental na mão">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem fine line na mão" data-i18n-aria-label="gallery.fineline.image5">
+        <img src="src/bt5.jpg" alt="Tatuagem fine line na mão" data-i18n-alt="gallery.fineline.image5">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem botanica de rosa colorida">
-        <img
-          src="src/j-silverhand.jpg"
-          alt="Tatuagem botanica de rosa colorida no braço"
-          loading="lazy">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem botânica no braço" data-i18n-aria-label="gallery.fineline.image6">
+        <img src="src/bt6.jpg" alt="Tatuagem botânica no braço" data-i18n-alt="gallery.fineline.image6" loading="lazy">
       </button>
     </div>
-    <button
-      class="galeria-seta-preview galeria-seta-preview-direita"
-      type="button"
-      aria-label="Ver mais fotos de Fine Line e Botanico">
+
+    <button class="galeria-seta-preview galeria-seta-preview-direita" type="button" aria-label="Ver mais fotos de Fine Line e Botânico" data-i18n-aria-label="gallery.fineline.next">
       <span aria-hidden="true">→</span>
     </button>
   </div>
+
   <div class="galeria-cta">
-    <button
-      class="botao botao-secundario botao-mostrar-galeria"
-      type="button"
-      aria-expanded="false">
-      <span class="texto-botao">Mostrar mais</span>
+    <button class="botao botao-secundario botao-mostrar-galeria" type="button" aria-expanded="false">
+      <span class="texto-botao" data-i18n="gallery.showMore">Mostrar mais</span>
       <span aria-hidden="true">↓</span>
     </button>
   </div>
+
   <div class="galeria-expandida-wrapper" hidden></div>
 </section>
+
+<!-- Galeria: Realismo & Retrato -->
 <section
   class="secao galeria-estilo galeria-estilo-escuro"
   id="galeria-realismo-retrato"
-  data-galeria="realismo-retrato">
+  data-galeria="realismo-retrato"
+>
   <div class="galeria-estilo-cabecalho">
-    <p class="etiqueta">Portfólio</p>
-    <h2>Realismo &amp; Retrato.</h2>
-    <p>Busca por reproduzir fielmente uma imagem real na pele e o retrato é uma especialidade focada em capturar feição, expressão e identidade.</p>
+    <p class="etiqueta" data-i18n="gallery.label">Portfólio</p>
+    <h2 data-i18n="gallery.realism.title">Realismo &amp; Retrato.</h2>
+    <p data-i18n="gallery.realism.description">
+      Busca por reproduzir fielmente uma imagem real na pele, com foco em capturar feições, expressão e identidade.
+    </p>
   </div>
+
   <div class="galeria-preview-wrapper">
-    <button
-      class="galeria-seta-preview galeria-seta-preview-esquerda"
-      type="button"
-      aria-label="Ver fotos anteriores de Realismo e Retrato">
+    <button class="galeria-seta-preview galeria-seta-preview-esquerda" type="button" aria-label="Ver fotos anteriores de Realismo e Retrato" data-i18n-aria-label="gallery.realism.previous">
       <span aria-hidden="true">←</span>
     </button>
+
     <div class="galeria-preview">
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem realista ornamental no antebraço">
-        <img
-          src="src/kirishi.jpg"
-          alt="Tatuagem realista ornamental no antebraço">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem realista no antebraço" data-i18n-aria-label="gallery.realism.image1">
+        <img src="src/re.jpg" alt="Tatuagem realista no antebraço" data-i18n-alt="gallery.realism.image1">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem realista ornamental na bunda">
-        <img
-          src="src/rita2.jpg"
-          alt="Tatuagem realista ornamental na bunda">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem realista na lateral do corpo" data-i18n-aria-label="gallery.realism.image2">
+        <img src="src/re2.jpg" alt="Tatuagem realista na lateral do corpo" data-i18n-alt="gallery.realism.image2">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem realista ornamental na barriga">
-        <img
-          src="src/lw.jpg"
-          alt="Tatuagem realista ornamental na barriga">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem realista no abdômen" data-i18n-aria-label="gallery.realism.image3">
+        <img src="src/re3.jpg" alt="Tatuagem realista no abdômen" data-i18n-alt="gallery.realism.image3">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem realista ornamental na costela">
-        <img
-          src="src/v.jpg"
-          alt="Tatuagem realista ornamental na costela">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem realista na costela" data-i18n-aria-label="gallery.realism.image4">
+        <img src="src/re4.jpg" alt="Tatuagem realista na costela" data-i18n-alt="gallery.realism.image4">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem realista ornamental no peito esquerdo">
-        <img
-          src="src/v2.jpg"
-          alt="Tatuagem realista ornamental no peito esquerdo">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem realista no peito" data-i18n-aria-label="gallery.realism.image5">
+        <img src="src/re5.jpg" alt="Tatuagem realista no peito" data-i18n-alt="gallery.realism.image5">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem retrato de rosa colorida">
-        <img
-          src="src/j-silverhand.jpg"
-          alt="Tatuagem retrato de rosa colorida no braço"
-          loading="lazy">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem de retrato no braço" data-i18n-aria-label="gallery.realism.image6">
+        <img src="src/re6.jpg" alt="Tatuagem de retrato no braço" data-i18n-alt="gallery.realism.image6" loading="lazy">
       </button>
     </div>
-    <button
-      class="galeria-seta-preview galeria-seta-preview-direita"
-      type="button"
-      aria-label="Ver mais fotos de Realismo e Retrato">
+
+    <button class="galeria-seta-preview galeria-seta-preview-direita" type="button" aria-label="Ver mais fotos de Realismo e Retrato" data-i18n-aria-label="gallery.realism.next">
       <span aria-hidden="true">→</span>
     </button>
   </div>
+
   <div class="galeria-cta">
-    <button
-      class="botao botao-secundario botao-mostrar-galeria"
-      type="button"
-      aria-expanded="false">
-      <span class="texto-botao">Mostrar mais</span>
+    <button class="botao botao-secundario botao-mostrar-galeria" type="button" aria-expanded="false">
+      <span class="texto-botao" data-i18n="gallery.showMore">Mostrar mais</span>
       <span aria-hidden="true">↓</span>
     </button>
   </div>
+
   <div class="galeria-expandida-wrapper" hidden></div>
 </section>
+
+<!-- Galeria: Autoral & Ilustrativo -->
 <section
   class="secao galeria-estilo"
   id="galeria-autoral-ilustrativo"
-  data-galeria="autoral-ilustrativo">
+  data-galeria="autoral-ilustrativo"
+>
   <div class="galeria-estilo-cabecalho">
-    <p class="etiqueta">Portfólio</p>
-    <h2>Autoral &amp; Ilustrativo.</h2>
-    <p>Obras exclusivas criadas do zero pelo tatuador para se adaptar perfeitamente ao corpo de cada cliente.</p>
+    <p class="etiqueta" data-i18n="gallery.label">Portfólio</p>
+    <h2 data-i18n="gallery.illustrative.title">Autoral &amp; Ilustrativo.</h2>
+    <p data-i18n="gallery.illustrative.description">
+      Obras exclusivas criadas do zero pelo tatuador para se adaptar perfeitamente ao corpo de cada cliente.
+    </p>
   </div>
+
   <div class="galeria-preview-wrapper">
-    <button
-      class="galeria-seta-preview galeria-seta-preview-esquerda"
-      type="button"
-      aria-label="Ver fotos anteriores de Autoral e Ilustrativo">
+    <button class="galeria-seta-preview galeria-seta-preview-esquerda" type="button" aria-label="Ver fotos anteriores de Autoral e Ilustrativo" data-i18n-aria-label="gallery.illustrative.previous">
       <span aria-hidden="true">←</span>
     </button>
+
     <div class="galeria-preview">
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem autoral ornamental no antebraço">
-        <img
-          src="src/lw.jpg"
-          alt="Tatuagem autoral no antebraço">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem autoral no antebraço" data-i18n-aria-label="gallery.illustrative.image1">
+        <img src="src/an.jpg" alt="Tatuagem autoral no antebraço" data-i18n-alt="gallery.illustrative.image1">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem autoral ornamental no antebraço">
-        <img
-          src="src/v2.jpg"
-          alt="Tatuagem autoral no antebraço">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem autoral no antebraço" data-i18n-aria-label="gallery.illustrative.image2">
+        <img src="src/an2.jpg" alt="Tatuagem autoral no antebraço" data-i18n-alt="gallery.illustrative.image2">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem autoral ornamental no têmpora">
-        <img
-          src="src/j-silverhand.jpg"
-          alt="Tatuagem autoral na têmpora">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem autoral na têmpora" data-i18n-aria-label="gallery.illustrative.image3">
+        <img src="src/an3.jpg" alt="Tatuagem autoral na têmpora" data-i18n-alt="gallery.illustrative.image3">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem autoral ornamental nas costas">
-        <img
-          src="src/v.jpg"
-          alt="Tatuagem autoral nas costas">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem autoral nas costas" data-i18n-aria-label="gallery.illustrative.image4">
+        <img src="src/an4.jpg" alt="Tatuagem autoral nas costas" data-i18n-alt="gallery.illustrative.image4">
       </button>
-       <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem autoral ornamental na coxa">
-        <img
-          src="src/kirishi.jpg"
-          alt="Tatuagem autoral na coxa">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem autoral na coxa" data-i18n-aria-label="gallery.illustrative.image5">
+        <img src="src/an5.jpg" alt="Tatuagem autoral na coxa" data-i18n-alt="gallery.illustrative.image5">
       </button>
-      <button
-        class="galeria-preview-item"
-        type="button"
-        aria-label="Ampliar tatuagem ilustrativa de rosa colorida">
-        <img
-          src="src/rita2.jpg"
-          alt="Tatuagem ilustrativa de rosa colorida no braço"
-          loading="lazy">
+      <button class="galeria-preview-item" type="button" aria-label="Ampliar tatuagem ilustrativa no braço" data-i18n-aria-label="gallery.illustrative.image6">
+        <img src="src/an6.jpg" alt="Tatuagem ilustrativa no braço" data-i18n-alt="gallery.illustrative.image6" loading="lazy">
       </button>
     </div>
-    <button
-      class="galeria-seta-preview galeria-seta-preview-direita"
-      type="button"
-      aria-label="Ver mais fotos de Autoral e Ilustrativo">
+
+    <button class="galeria-seta-preview galeria-seta-preview-direita" type="button" aria-label="Ver mais fotos de Autoral e Ilustrativo" data-i18n-aria-label="gallery.illustrative.next">
       <span aria-hidden="true">→</span>
     </button>
   </div>
+
   <div class="galeria-cta">
-    <button
-      class="botao botao-secundario botao-mostrar-galeria"
-      type="button"
-      aria-expanded="false">
-      <span class="texto-botao">Mostrar mais</span>
+    <button class="botao botao-secundario botao-mostrar-galeria" type="button" aria-expanded="false">
+      <span class="texto-botao" data-i18n="gallery.showMore">Mostrar mais</span>
       <span aria-hidden="true">↓</span>
     </button>
   </div>
+
   <div class="galeria-expandida-wrapper" hidden></div>
 </section>
-    <!-- FAQ -->
-    <section class="secao faq" id="faq">
-      <div class="secao-cabecalho">
-        <p class="etiqueta">Dúvidas frequentes</p>
-        <h2>FAQ</h2>
-        <p>Perguntas que a gente mais recebe antes de uma sessão.</p>
-      </div>
-      <div class="lista-faq">
-        <details class="item-faq" open>
-          <summary>
-            O procedimento dói?
-            <span aria-hidden="true">+</span>
-          </summary>
-          <p>Existe desconforto, que varia de pessoa para pessoa e conforme
-            a região do corpo. Nossa equipe explica todo o processo antes
-            de começar para reduzir a ansiedade.</p>
-        </details>
-        <details class="item-faq">
-          <summary>
-            Quanto tempo leva até a cicatrização?
-            <span aria-hidden="true">+</span>
-          </summary>
-          <p>O tempo médio de cicatrização visível é de 2 a 4 semanas,
-            variando conforme o tamanho, a região tatuada e os cuidados
-            seguidos no pós-tatuagem.</p>
-        </details>
-        <details class="item-faq">
-          <summary>
-            Preciso agendar uma avaliação antes?
-            <span aria-hidden="true">+</span>
-          </summary>
-          <p>Sim. Para projetos personalizados, fazemos uma conversa
-            inicial para entender referência, tamanho e local do corpo
-            antes de fechar valor e data.</p>
-        </details>
-        <details class="item-faq">
-          <summary>
-            Vocês aceitam cartão e pagamento parcelado?
-            <span aria-hidden="true">+</span>
-          </summary>
-          <p>Aceitamos pix, cartão de débito e crédito, com parcelamento
-            disponível para sessões de maior valor.</p>
-        </details>
-      </div>
-    </section>
-    <!-- Avaliações -->
+   <section class="secao faq" id="faq">
+  <div class="secao-cabecalho">
+    <p class="etiqueta" data-i18n="faq.label">
+      Dúvidas frequentes
+    </p>
+
+    <h2 data-i18n="faq.title">
+      FAQ
+    </h2>
+
+    <p data-i18n="faq.intro">
+      Perguntas que a gente mais recebe antes de uma sessão.
+    </p>
+  </div>
+
+  <div class="lista-faq">
+    <details class="item-faq" open>
+      <summary>
+        <span data-i18n="faq.pain.question">
+          O procedimento dói?
+        </span>
+
+        <span class="faq-simbolo" aria-hidden="true">+</span>
+      </summary>
+
+      <p data-i18n="faq.pain.answer">
+        Existe desconforto, que varia de pessoa para pessoa e conforme a região do corpo. Nossa equipe explica todo o processo antes de começar para reduzir a ansiedade.
+      </p>
+    </details>
+
+    <details class="item-faq">
+      <summary>
+        <span data-i18n="faq.healing.question">
+          Quanto tempo leva até a cicatrização?
+        </span>
+
+        <span class="faq-simbolo" aria-hidden="true">+</span>
+      </summary>
+
+      <p data-i18n="faq.healing.answer">
+        O tempo médio de cicatrização visível é de 2 a 4 semanas, variando conforme o tamanho, a região tatuada e os cuidados seguidos no pós-tatuagem.
+      </p>
+    </details>
+
+    <details class="item-faq">
+      <summary>
+        <span data-i18n="faq.consultation.question">
+          Preciso agendar uma avaliação antes?
+        </span>
+
+        <span class="faq-simbolo" aria-hidden="true">+</span>
+      </summary>
+
+      <p data-i18n="faq.consultation.answer">
+        Sim. Para projetos personalizados, fazemos uma conversa inicial para entender referência, tamanho e local do corpo antes de fechar valor e data.
+      </p>
+    </details>
+
+    <details class="item-faq">
+      <summary>
+        <span data-i18n="faq.payment.question">
+          Vocês aceitam cartão e pagamento parcelado?
+        </span>
+
+        <span class="faq-simbolo" aria-hidden="true">+</span>
+      </summary>
+
+      <p data-i18n="faq.payment.answer">
+        Aceitamos Pix, cartão de débito e crédito, com parcelamento disponível para sessões de maior valor.
+      </p>
+    </details>
+  </div>
+</section>
+
     <section class="secao avaliacoes" id="avaliacoes">
       <div class="secao-cabecalho">
-        <p class="etiqueta">Depoimentos</p>
-        <h2>Avaliações</h2>
-        <p>Veja o que nossos clientes dizem.</p>
+        <p class="etiqueta" data-i18n="reviews.label">Depoimentos</p>
+        <h2 data-i18n="reviews.title">Avaliações</h2>
+        <p data-i18n="reviews.intro">Veja o que nossos clientes dizem.</p>
       </div>
+
       <div class="grade-depoimentos">
         <article class="depoimento-card">
           <p class="depoimento-estrelas" aria-hidden="true">★★★★★</p>
-          <p>“Estúdio maneirão. Ambiente limpo, artista super atencioso e
-            o resultado ficou exatamente como eu queria.”</p>
+          <p data-i18n="reviews.one">“Estúdio maneiro. Ambiente limpo, artista super atencioso e o resultado ficou exatamente como eu queria.”</p>
           <span class="depoimento-autor">— Marcela T.</span>
         </article>
         <article class="depoimento-card">
           <p class="depoimento-estrelas" aria-hidden="true">★★★★★</p>
-          <p>“Já fiz duas tatuagens aqui e as duas vezes fui muito bem
-            atendida, desde o orçamento até a cicatrização.”</p>
+          <p data-i18n="reviews.two">“Já fiz duas tatuagens aqui e, nas duas vezes, fui muito bem atendida, desde o orçamento até a cicatrização.”</p>
           <span class="depoimento-autor">— Felipe A.</span>
         </article>
         <article class="depoimento-card">
           <p class="depoimento-estrelas" aria-hidden="true">★★★★★</p>
-          <p>“Recomendo demais. Profissionais atenciosos e um cuidado com
-            biossegurança que me deixou bem mais tranquila.”</p>
+          <p data-i18n="reviews.three">“Recomendo demais. Profissionais atenciosos e um cuidado com biossegurança que me deixou bem mais tranquila.”</p>
           <span class="depoimento-autor">— Duda S.</span>
         </article>
       </div>
     </section>
-    <!-- Localização -->
-   <section class="secao localizacao" id="localizacao">
-  <div class="localizacao-texto">
-    <p class="etiqueta">Onde estamos</p>
-    <h2>Localização</h2>
-    <p>Venham nos visitar.</p>
-  </div>
-  <div class="mapa-wrapper">
-    <iframe
-      src="https://www.google.com/maps/embed?..."
-      title="Mapa da localização do estúdio em Brasília"
-      allowfullscreen
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-    ></iframe>
-  </div>
-</section>
-    <!-- Formulário de contato -->
+
+    <section class="secao localizacao" id="localizacao">
+      <div class="localizacao-texto">
+        <p class="etiqueta" data-i18n="location.label">Onde estamos</p>
+        <h2 data-i18n="location.title">Localização</h2>
+        <p data-i18n="location.text">Venha nos visitar.</p>
+      </div>
+
+      <div class="mapa-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?..."
+          title="Mapa da localização do estúdio em Brasília"
+          data-i18n-title="location.mapTitle"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </section>
+
     <section class="secao formulario-contato" id="formulario-contato">
       <div class="secao-cabecalho">
-        <p class="etiqueta">Contato</p>
-        <h2>Fale com a gente</h2>
-        <p>Conte sua ideia e agende uma avaliação sem compromisso.</p>
+        <p class="etiqueta" data-i18n="contact.label">Contato</p>
+        <h2 data-i18n="contact.title">Fale com a gente</h2>
+        <p data-i18n="contact.text">Conte sua ideia e agende uma avaliação sem compromisso.</p>
       </div>
+
       <form class="contact-form" id="contact-form">
         <div class="form-group">
-          <label for="nome">Seu nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome aqui" required>
+          <label for="nome" data-i18n="contact.name">Seu nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome aqui" data-i18n-placeholder="contact.namePlaceholder" required>
         </div>
+
         <div class="form-group">
-          <label for="whats">WhatsApp</label>
-          <input type="tel" id="whats" name="whats" placeholder="(61) 90000-0000" required>
+          <label for="whats" data-i18n="contact.whatsapp">WhatsApp</label>
+          <input type="tel" id="whats" name="whats" placeholder="(61) 90000-0000" data-i18n-placeholder="contact.whatsappPlaceholder" required>
         </div>
+
         <div class="form-group">
-          <label for="msg">Mensagem</label>
-          <textarea
-            id="msg"
-            name="msg"
-            placeholder="Ex: Tenho interesse em agendar uma avaliação."required>
-          </textarea>
+          <label for="msg" data-i18n="contact.message">Mensagem</label>
+          <textarea id="msg" name="msg" placeholder="Ex: Tenho interesse em agendar uma avaliação." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
         </div>
-        <button type="submit" class="botao botao-primario botao-form">
-          Enviar mensagem →
-        </button>
+
+        <button type="submit" class="botao botao-primario botao-form" data-i18n="contact.submit">Enviar mensagem →</button>
       </form>
     </section>
   </main>
-<a href="#topo"
-  class="botao-topo"
-  aria-label="Voltar para o início da página">
-  <span aria-hidden="true">↑</span></a>
+
+  <a href="#topo" class="botao-topo" aria-label="Voltar para o início da página" data-i18n-aria-label="footer.back">
+    <span aria-hidden="true">↑</span>
+  </a>
+
   <footer class="rodape">
-    <p>© 2026 Studio Tattoo. Todos os direitos reservados.</p>
+    <p data-i18n="footer.copyright">© 2026 Studio Tattoo. Todos os direitos reservados.</p>
   </footer>
-<dialog class="lightbox-galeria" id="lightbox-galeria" aria-label="Visualização ampliada da foto">
-  <button
-    class="lightbox-fechar"
-    type="button"
-    id="lightbox-fechar"
-    aria-label="Fechar visualização">
-    <span aria-hidden="true">✕</span>
-  </button>
-  <button
-    class="lightbox-seta lightbox-seta-esquerda"
-    type="button"
-    id="lightbox-anterior"
-    aria-label="Foto anterior">
-    <span aria-hidden="true">←</span>
-  </button>
-  <figure class="lightbox-conteudo">
-    <img id="lightbox-imagem" src="" alt="">
-    <figcaption class="lightbox-contador" id="lightbox-contador"></figcaption>
-  </figure>
-  <button
-    class="lightbox-seta lightbox-seta-direita"
-    type="button"
-    id="lightbox-proxima"
-    aria-label="Próxima foto">
-    <span aria-hidden="true">→</span>
-  </button>
-</dialog>
-  <script src="script.js"></script>
+
+  <dialog class="lightbox-galeria" id="lightbox-galeria" aria-label="Visualização ampliada da foto">
+    <button class="lightbox-fechar" type="button" id="lightbox-fechar" aria-label="Fechar visualização">
+      <span aria-hidden="true">✕</span>
+    </button>
+    <button class="lightbox-seta lightbox-seta-esquerda" type="button" id="lightbox-anterior" aria-label="Foto anterior">
+      <span aria-hidden="true">←</span>
+    </button>
+    <figure class="lightbox-conteudo">
+      <img id="lightbox-imagem" src="" alt="">
+      <figcaption class="lightbox-contador" id="lightbox-contador"></figcaption>
+    </figure>
+    <button class="lightbox-seta lightbox-seta-direita" type="button" id="lightbox-proxima" aria-label="Próxima foto">
+      <span aria-hidden="true">→</span>
+    </button>
+  </dialog>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
